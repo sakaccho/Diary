@@ -1,0 +1,9 @@
+<h1>日記一覧</h1>
+<ul>
+<% @articles.each do |article| %>
+    <li>
+        <h2><%= article.title %></h2>
+        <%= link_to('開く', {controller: 'Article', action: 'show', id: article.id}) %>
+    </li>
+<% end %>
+</ul>
