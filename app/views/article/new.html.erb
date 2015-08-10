@@ -1,0 +1,17 @@
+<h1>日記の新規作成</h1>
+
+<%= form_for(@articles) do |f| %>
+    <p>
+        <%= f.label :title %>
+        <%= f.text_area :title, required:true %>
+    </p>
+    <p>
+        <%= f.label :body %>
+        <%= f.text_area :body, required:true %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
+
+<%= link_to('一覧に戻る', {controller: 'Article', action: 'index'}) %>
