@@ -54,6 +54,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root 'article#index'
+  root 'article#index', as: :articles
+  get '/new' => 'article#new'
+  post '/new' => 'article#create'
   get '/:id' => 'article#show'
 end

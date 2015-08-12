@@ -12,7 +12,7 @@ class ArticleController < ApplicationController
 
   # GETで記事作成ページを表示
   def new
-
+    @article = Article.new
   end
 
   # POSTで記事を作成する
