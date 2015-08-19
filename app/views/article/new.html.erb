@@ -1,6 +1,6 @@
 <h1>日記の新規作成</h1>
 
-<%= form_for @article do |f| %>
+<%= form_for @article, url: {controller:'article', action:'create'} do |f| %>
     <p>
         <%= f.label :title %>
         <%= f.text_area :title, required:true %>

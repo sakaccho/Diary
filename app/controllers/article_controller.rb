@@ -17,7 +17,12 @@ class ArticleController < ApplicationController
 
   # POSTで記事を作成する
   def create
-
+    @article = Article.new(article_params)
+    if @article.save
+      redirect_to controller:'article', action:'index'
+    else
+      render 'new'
+    end
   end
 
   # GETで記事編集ページを表示
@@ -34,5 +39,11 @@ class ArticleController < ApplicationController
   def destroy
 
   end
+
+  private
+      # Never trust parameters from the scary internet, only allow the white list through.
+      def article_params
+        params.require(:article).permit(:title, :body)
+      end
 
 end
